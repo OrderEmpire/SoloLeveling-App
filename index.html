@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Leveling</title>
+
+    <link rel="stylesheet" href="StyleFile/styles.css">
+    <link href="https://fonts.cdnfonts.com/css/sansation" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="Logo">Logo</div>
+        <nav class="navbar">
+            <a href="#QuestPage"><img src="icons/notification-status.svg"></a>
+            <a href="#StatusPage"><img src="icons/eye.svg"></a>
+            <a href="#SettingPage" class="Setting"><img src="icons/category.svg"></a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page I  -->
+        <section class="QuestPage">
+            <div class="Title">
+                <img src="icons/QuestIcon.svg" width="40" height="40">
+                <h1>QUEST INFO</h1>
+            </div>
+            <p class="DailyQuest"><span style="color: rgb(0, 255, 0)">DAILY QUEST</span> - TRAIN TO BE THE <u>STRONG</u> SOFTWARE ENGINEER</p>
+            
+            <div class="Quest">
+                <h2>GOALS</h2>
+                <div class="Quest-page">
+                   <div class="checkbox-column">
+                        <img src="icons/Vector.svg" width="30px" height="30px">
+                        <img src="icons/Vector.svg" width="30px" height="30px">
+                        <img src="icons/Vector.svg" width="30px" height="30px">
+                        <img src="icons/Vector.svg" width="30px" height="30px">
+                        <img src="icons/Vector.svg" width="30px" height="30px">
+                        <img src="icons/Vector.svg" width="30px" height="30px">
+                   </div>
+                   
+                   <div class="Task-column">
+                    <div class="Quest-column">
+                        <p>PUSH-UPS</p>
+                        <p>SIT-UPS</p>
+                        <p>SQUATS</p>
+                        <p>RUN</p>
+                        <p>OTHER TASK #1</p>
+                        <p>OTHER TASK #2</p>
+                    </div>
+
+                    <div class="Reps-column">
+                        <p>(0/100)</p>
+                        <p>(0/100)</p>
+                        <p>(0/100)</p>
+                        <p>(0/10km)</p>
+                        <p>(0/NA)</p>
+                        <p>(0/NA)</p>
+                    </div>
+                   </div>
+                </div>
+            </div>
+
+            <h4 class="Caution"><span style="color: red;">CAUTION!</span> - IF THE DAILY QUEST REMAINS INCOMPLETE, PENALTIES WILL BE GIVEN ACCORDINGLY.</h4>
+            <svg width="100" height="100" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="75" cy="81.25" r="43.75" stroke="white" stroke-width="5" class="Alarmclock"/>
+                <path d="M31.25 31.25L18.75 43.75" stroke="white" stroke-width="10" stroke-linecap="round" class="Alarmclock"/>
+                <path d="M118.75 31.25L131.25 43.75" stroke="white" stroke-width="10" stroke-linecap="round" class="Alarmclock"/>
+                <path d="M56.25 68.75L74.8093 81.1229C74.9172 81.1948 75.0622 81.1723 75.1432 81.071L87.5 65.625" stroke="white" stroke-width="5" stroke-linecap="round" class="Alarmclock"/>
+            </svg>
+        </section> 
+
+        <!--  PENALTY PAGE -->
+        <section class="PenaltyPage">
+            <div class="Title" id="PenaltyPageTitle">
+                <img src="icons/View.svg">
+                <h1 class="PenaltyTitle">PENALTY ZONE</h1>
+            </div>
+
+            
+            <div clas="Penalty">
+                <div class="Torture"><iframe class="KSIVideo" width="530" height="315" src="https://www.youtube.com/embed/6IuwXKjQB7c?si=a2umk1Q2F_t8a2NR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                <div class="Penalty-bar"><img src="icons/Vector.svg"><p>"THICK OF IT"</p><p class="duration">(0/1 hour)</p></div>
+            </div>
+
+            <h4 class="Caution">WELCOME. LISTEN TO <span style="color: red">“THICK OF IT”</span> - KAI CENAT FOR <span style="color: red">1 HOUR.</span> WILL BE DOUBLE FOR THE NEXT FAIL.</h4>
+            <svg class="Skull" width="170" height="160" viewBox="0 0 170 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect class="skull" x="0.5" y="0.5" width="169" height="159" stroke="black"/>
+                <path class="skull" d="M42.5 146.667V118.333C37.8959 116.444 33.8525 113.917 30.3698 110.75C26.8872 107.583 23.9358 104 21.5156 99.9999C19.0955 95.9999 17.2656 91.7221 16.0261 87.1666C14.7865 82.611 14.1667 77.9999 14.1667 73.3332C14.1667 55.7777 20.7778 41.3888 34 30.1666C47.2222 18.9444 64.2222 13.3333 85 13.3333C105.778 13.3333 122.778 18.9444 136 30.1666C149.222 41.3888 155.833 55.7777 155.833 73.3332C155.833 77.9999 155.214 82.611 153.974 87.1666C152.734 91.7221 150.905 95.9999 148.484 99.9999C146.064 104 143.113 107.583 139.63 110.75C136.148 113.917 132.104 116.444 127.5 118.333V146.667H42.5ZM56.6667 133.333H63.75V120H77.9167V133.333H92.0834V120H106.25V133.333H113.333V109.667C117.819 108.667 121.804 107 125.286 104.667C128.769 102.333 131.721 99.5555 134.141 96.3332C136.561 93.111 138.42 89.5555 139.719 85.6666C141.017 81.7777 141.667 77.6666 141.667 73.3332C141.667 59.4444 136.443 48.1944 125.995 39.5833C115.547 30.9721 101.882 26.6666 85 26.6666C68.1181 26.6666 54.4531 30.9721 44.0052 39.5833C33.5573 48.1944 28.3334 59.4444 28.3334 73.3332C28.3334 77.6666 28.9827 81.7777 30.2813 85.6666C31.5799 89.5555 33.4393 93.111 35.8594 96.3332C38.2795 99.5555 41.2604 102.333 44.8021 104.667C48.3438 107 52.2986 108.667 56.6667 109.667V133.333ZM74.375 99.9999H95.625L85 79.9999L74.375 99.9999ZM60.2084 86.6666C64.1042 86.6666 67.4393 85.361 70.2136 82.7499C72.9879 80.1388 74.375 76.9999 74.375 73.3332C74.375 69.6666 72.9879 66.5277 70.2136 63.9166C67.4393 61.3055 64.1042 59.9999 60.2084 59.9999C56.3125 59.9999 52.9775 61.3055 50.2031 63.9166C47.4288 66.5277 46.0417 69.6666 46.0417 73.3332C46.0417 76.9999 47.4288 80.1388 50.2031 82.7499C52.9775 85.361 56.3125 86.6666 60.2084 86.6666ZM109.792 86.6666C113.688 86.6666 117.023 85.361 119.797 82.7499C122.571 80.1388 123.958 76.9999 123.958 73.3332C123.958 69.6666 122.571 66.5277 119.797 63.9166C117.023 61.3055 113.688 59.9999 109.792 59.9999C105.896 59.9999 102.561 61.3055 99.7865 63.9166C97.0122 66.5277 95.625 69.6666 95.625 73.3332C95.625 76.9999 97.0122 80.1388 99.7865 82.7499C102.561 85.361 105.896 86.6666 109.792 86.6666Z" fill="#EA3323"/>
+            </svg> 
+        </section>
+
+        STATUS PAGE 
+        <section class="STATUS PAGE">
+
+        </section>
+    </main>
+</body>
+</html>
