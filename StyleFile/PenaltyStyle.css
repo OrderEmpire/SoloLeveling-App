@@ -1,0 +1,52 @@
+.PenaltyPage {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+
+}
+
+.Title .PenaltyTitle {
+    font-size: 2.3rem;
+    color: red;
+    text-shadow: 0 0 10px red;
+}
+
+
+.Penalty-bar {
+    display: flex;
+    margin-top: 50px;
+}
+
+.Penalty-bar p {
+    font-size: 1.5rem;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.Penalty-bar .duration {
+    padding-left: 180px;
+    text-align: right;
+
+}
+
+.Penalty-bar img {
+    margin-left: 10px;
+    cursor: pointer;
+    margin-right: 30px;
+    transition: box-shadow 0.3s;
+}
+
+.Penalty-bar img:hover {
+    box-shadow: 0 0 10px white;
+}
+
+.Skull {
+    border: none;
+    transform: translate(180px, -20px);
+}
+
+.Torture {
+    margin-left: 20px;
+}
