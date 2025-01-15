@@ -1,30 +1,63 @@
-let taskCompleteState = false;
+let ExpToLevelUp = 10;
+let currentExp = 0;
+let level = 0;
+let FatiguePoint = 0;
 
-const QuestComplete = (checkbox, ExpGain) => {
-    let taskCompleted = document.getElementById("TaskColumn");
-    taskCompleteState = true;
+const QuestComplete = () => {
+    const [TaskOne, TaskTwo, TaskThree, TaskFour, TaskFive, TaskSix] = document.querySelectorAll("#MainTask p");
+    const [RepsOne, RepsTwo, RepsThree, RepsFour, RepsFive, RepsSix] = document.querySelectorAll("#RepsTask p");
+    const [Cb1, Cb2, Cb3, Cb4, Cb5, Cb6] = document.querySelectorAll('.checkbox-column input[type="checkbox"]');
+    const checkboxes = [Cb1, Cb2, Cb3, Cb4, Cb5, Cb6];
+    const tasks = [TaskOne, TaskTwo, TaskThree, TaskFour, TaskFive, TaskSix];
+    const reps = [RepsOne, RepsTwo, RepsThree, RepsFour, RepsFive, RepsSix];
 
-    // When Checkbox is clicked, style text-decoration to line through and set the color to gray.
-        if (checkbox.checked && taskCompleteState) {
-            taskCompleted.style.textDecoration = "line-through";
-            taskCompleted.style.color = "gray";
+    const repsValue = (i) => {
+        const repsData = ['100', '100', '100', '10', 'NA', 'NA'];
+        return repsData[i];
+    }
+
+    checkboxes.forEach((cb, i) => {
+        cb.removeEventListener('change', cb.listener);
+
+        cb.listener = () => {
+            const task = tasks[i];
+            const rep = reps[i];
             
-        } else {
-            taskCompleteState = false;
-            taskCompleted.style.textDecoration = "none";
-            taskCompleted.style.color = "white";
-        }
+            if (cb.checked) {
+                task.style.color = rep.style.color = 'gray';
+                task.style.textDecoration = rep.style.textDecoration = 'line-through';
+                currentExp += 2;
 
-    
-    // Add 2 exps to the exp bar in the status page.
-    // Task will be reseted to non-check after 24 hours.
-}
+                if (rep.textContent.includes('[0/')) {
+                    rep.textContent = rep.textContent.replace('[0/', `[${repsValue(i)}/`);
+                }
 
-const LevelUp = () => {
-    // Inner bar width starts at 5% (0)
-    // % Width gain = current exp / Exp required to level Up * 100
-    // Normal level-up = 1 available points, every level % 5 = 0 --> +2 available points, every level % 10 = 0 --> +3 available points
-}
+            } else {
+                task.style.color = rep.style.color = 'white';
+                task.style.textDecoration = rep.style.textDecoration = 'none';
+                rep.textContent = rep.textContent.replace(`[${repsValue(i)}/`, '[0/');
+                currentExp -= 2;
+            }
+
+            LevelSystem();
+        };
+
+        cb.addEventListener('change', cb.listener);
+    });
+};
+
+const LevelSystem = () => {
+    while (currentExp >= ExpToLevelUp) {
+        currentExp -= ExpToLevelUp;  
+        level++;
+        ExpToLevelUp += 10;  
+        alert(`Level Up! You are now Level ${level}`);
+    }
+
+    const progressBarWidth = (currentExp / ExpToLevelUp) * 100;
+    document.getElementById('innerExpBar').style.width = progressBarWidth + "%";
+    document.getElementById('ExpInfo').textContent = `${currentExp} / ${ExpToLevelUp} EXP`;
+};
 
 const PenaltyZone = () => {
     // Send user into penalty zone for every unchecked task after 12:00 AM.
